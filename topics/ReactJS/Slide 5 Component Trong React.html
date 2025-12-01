@@ -1,0 +1,89 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 5. Component Trong React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">React Components: Nền tảng xây dựng UI</h1>
+        <p class="text-xl text-slate-500 mt-2">Hiểu về các khối xây dựng cơ bản của ứng dụng React</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Định nghĩa Component -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Component là gì?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Khối xây dựng cơ bản của UI</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Là các khối UI độc lập, có thể tái sử dụng.</li>
+                <li>Kết hợp các component để tạo nên giao diện người dùng phức tạp.</li>
+                <li>Mỗi component quản lý trạng thái (state) và logic riêng của nó.</li>
+                <li>Giúp code dễ quản lý, bảo trì và phát triển.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Phân loại Component -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Phân loại Component</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Class Components và Functional Components</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>
+                    <h3 class="text-xl font-semibold text-slate-700">Class Components:</h3>
+                    <ul class="list-circle list-inside ml-4">
+                        <li>Sử dụng cú pháp ES6 class.</li>
+                        <li>Quản lý state và lifecycle bằng các phương thức (methods).</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-slate-700">Functional Components:</h3>
+                    <ul class="list-circle list-inside ml-4">
+                        <li>Là các hàm JavaScript thuần túy.</li>
+                        <li>Sử dụng React Hooks (useState, useEffect,...) từ v16.8+.</li>
+                        <li>Được khuyến nghị sử dụng cho các dự án mới.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Cấu trúc Component đơn giản -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Cấu trúc Component</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Ví dụ Functional Component đơn giản</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>
+                    <h3 class="text-xl font-semibold text-slate-700">Định nghĩa:</h3>
+                    <p class="text-sm bg-slate-100 p-2 rounded-md mt-1 font-mono text-slate-800">
+                        function Welcome(props) { <br>
+                        &nbsp;&nbsp;return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;; <br>
+                        }
+                    </p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-slate-700 mt-3">Sử dụng JSX:</h3>
+                    <p class="text-sm bg-slate-100 p-2 rounded-md mt-1 font-mono text-slate-800">
+                        &lt;Welcome name="World" /&gt;
+                    </p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-slate-700 mt-3">Đầu ra:</h3>
+                    <p class="text-base text-slate-800 mt-1">Hello, World!</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

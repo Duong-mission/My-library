@@ -1,0 +1,64 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 25. Xử Lý Form Controlled Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Quản Lý Form trong ReactJS</h1>
+        <p class="text-xl text-slate-500 mt-2">Hiểu về form, Controlled Components và cách xử lý input hiệu quả.</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Giới Thiệu Form trong React -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Form trong ReactJS</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tương tác người dùng hiệu quả</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Forms là cốt lõi của mọi ứng dụng web tương tác.</li>
+                <li>React cung cấp cách tiếp cận khai báo để quản lý form.</li>
+                <li>Khác biệt với HTML thuần: React kiểm soát dữ liệu form thông qua state.</li>
+                <li>Đảm bảo dữ liệu nhất quán và luồng thông tin rõ ràng.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Controlled Components -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Controlled Components</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">State quản lý giá trị input</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Các phần tử input form được liên kết trực tiếp với state của React.</li>
+                <li>Giá trị hiển thị của input luôn được đọc từ state.</li>
+                <li>Mọi thay đổi của người dùng (`onChange`) sẽ gọi hàm cập nhật state.</li>
+                <li>Mang lại quyền kiểm soát hoàn toàn cho React, giúp dễ dàng validate và xử lý dữ liệu.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Xử Lý Input, Textarea, Select & Submit -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Thao Tác Với Form</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Các loại input và submit</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>**Input (Text, Number):** Gán `value={stateVariable}` và `onChange={handleChange}`.</li>
+                <li>**Textarea:** Tương tự input, sử dụng thuộc tính `value` thay vì nội dung giữa thẻ.</li>
+                <li>**Select:** Gán `value` cho thẻ `<select>`, `onChange` để cập nhật state.</li>
+                <li>**Submit Form:** Sử dụng `onSubmit` trên thẻ `<form>`, gọi `event.preventDefault()` để ngăn tải lại trang.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

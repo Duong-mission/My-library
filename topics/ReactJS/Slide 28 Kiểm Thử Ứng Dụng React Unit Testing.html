@@ -1,0 +1,63 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 28. Kiểm Thử Ứng Dụng React Unit Testing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Kiểm thử Ứng dụng React</h1>
+        <p class="text-xl text-slate-500 mt-2">Đảm bảo Chất lượng và Độ tin cậy cho sản phẩm của bạn</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Tầm quan trọng của Kiểm thử React -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Tại sao cần Kiểm thử?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Đảm bảo Chất lượng & Độ Tin cậy</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Phát hiện lỗi sớm, giảm chi phí sửa chữa.</li>
+                <li>Cải thiện độ ổn định và hiệu suất ứng dụng.</li>
+                <li>Tăng cường sự tự tin khi phát triển và triển khai.</li>
+                <li>Hỗ trợ refactoring an toàn, duy trì mã nguồn sạch.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Các Loại Kiểm thử Phổ biến -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Phân loại Kiểm thử</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Từ nhỏ đến lớn</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-[#3F51B5]">Unit Tests:</b> Kiểm tra các thành phần nhỏ nhất (component, hàm).</li>
+                <li><b class="text-[#3F51B5]">Integration Tests:</b> Kiểm tra sự tương tác giữa các thành phần.</li>
+                <li><b class="text-[#3F51B5]">End-to-End (E2E) Tests:</b> Mô phỏng kịch bản người dùng thực tế trên toàn bộ ứng dụng.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Công cụ cho Unit Tests React -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Jest & React Testing Library</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Viết Unit Tests hiệu quả</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-[#3F51B5]">Jest:</b> Framework kiểm thử JavaScript mạnh mẽ.</li>
+                <li><b class="text-[#3F51B5]">React Testing Library (RTL):</b> Tập trung vào hành vi người dùng.</li>
+                <li>RTL khuyến khích kiểm thử dựa trên cách người dùng tương tác với DOM.</li>
+                <li>Các hàm phổ biến: `render`, `screen.getByText`, `fireEvent`.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

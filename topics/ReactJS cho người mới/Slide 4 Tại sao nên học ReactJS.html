@@ -1,0 +1,62 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 4. Tại sao nên học ReactJS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">ReactJS: Lợi ích & Cơ hội nghề nghiệp</h1>
+        <p class="text-xl text-slate-500 mt-2">Thư viện JavaScript mạnh mẽ cho phát triển Front-end hiện đại</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Lợi ích cốt lõi -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Hiệu suất & Tái sử dụng</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Nền tảng phát triển mạnh mẽ</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><span class="font-semibold text-slate-800">Hiệu suất cao:</span> Sử dụng Virtual DOM, chỉ cập nhật những phần cần thiết.</li>
+                <li><span class="font-semibold text-slate-800">Components tái sử dụng:</span> Xây dựng UI từ các khối độc lập, dễ quản lý.</li>
+                <li><span class="font-semibold text-slate-800">Quản lý trạng thái:</span> Dễ dàng với State và Props.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Hỗ trợ phát triển -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Cộng đồng & Học tập</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Môi trường phát triển thân thiện</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><span class="font-semibold text-slate-800">Cộng đồng lớn:</span> Hỗ trợ rộng rãi, nhiều tài liệu và thư viện.</li>
+                <li><span class="font-semibold text-slate-800">Dễ học:</span> Với nền tảng HTML, CSS, và đặc biệt là JavaScript (ES6+).</li>
+                <li><span class="font-semibold text-slate-800">Tài liệu chính thức:</span> Cung cấp lộ trình học tập có hệ thống.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Cơ hội nghề nghiệp -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Mở rộng sự nghiệp</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Nhu cầu thị trường cao</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><span class="font-semibold text-slate-800">Frontend Developer:</span> Vị trí cốt lõi, xây dựng giao diện người dùng.</li>
+                <li><span class="font-semibold text-slate-800">Fullstack Developer:</span> Kết hợp React với backend (Node.js, Python...).</li>
+                <li><span class="font-semibold text-slate-800">Technical Lead:</span> Dẫn dắt đội ngũ phát triển React.</li>
+                <li><span class="font-semibold text-slate-800">React Native Developer:</span> Phát triển ứng dụng di động đa nền tảng.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 11. Giai Đoạn Updating</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Vòng Đời Cập Nhật Component trong React</h1>
+        <p class="text-xl text-slate-500 mt-2">Các phương thức được gọi khi component được cập nhật (do thay đổi props hoặc state).</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: componentDidUpdate -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">componentDidUpdate</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Thực hiện Side Effects sau Render</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Được gọi ngay sau khi cập nhật DOM.</li>
+                <li>Lý tưởng cho các thao tác DOM hoặc yêu cầu mạng.</li>
+                <li>Cần so sánh `prevProps` và `prevState` để tránh vòng lặp vô hạn.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: shouldComponentUpdate -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">shouldComponentUpdate</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tối ưu hóa Hiệu suất Render</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Được gọi trước khi `render()` khi có props/state mới.</li>
+                <li>Trả về `true` (mặc định) để component re-render, `false` để ngăn chặn.</li>
+                <li>Sử dụng cẩn thận để tránh bỏ lỡ các cập nhật cần thiết.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: getSnapshotBeforeUpdate -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">getSnapshotBeforeUpdate</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Chụp Trạng thái DOM trước Cập nhật</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Được gọi ngay trước khi DOM được cập nhật.</li>
+                <li>Cho phép component chụp thông tin từ DOM (ví dụ: vị trí cuộn).</li>
+                <li>Giá trị trả về sẽ được truyền làm tham số thứ ba cho `componentDidUpdate`.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

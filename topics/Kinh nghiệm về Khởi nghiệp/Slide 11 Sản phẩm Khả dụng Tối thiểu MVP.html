@@ -1,0 +1,58 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 11. Sản phẩm Khả dụng Tối thiểu (MVP)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">MVP: Sản phẩm Khả dụng Tối thiểu</h1>
+        <p class="text-xl text-slate-500 mt-2">Xây dựng đúng sản phẩm, cho đúng người dùng, một cách nhanh nhất.</p>
+    </header>
+
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Định nghĩa MVP -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Định nghĩa MVP</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Phiên bản cốt lõi nhất</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Là một phiên bản sản phẩm chỉ với các tính năng cơ bản nhất.</li>
+                <li>Đủ để giải quyết một vấn đề cốt lõi cho nhóm người dùng đầu tiên (early adopters).</li>
+                <li>Mục tiêu là để học hỏi và kiểm chứng, không phải là một sản phẩm hoàn hảo.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Lợi ích của MVP -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Lợi ích chính</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tối ưu hóa nguồn lực</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Tiết kiệm tối đa chi phí và thời gian phát triển ban đầu.</li>
+                <li>Thu thập phản hồi thực tế từ thị trường một cách nhanh chóng.</li>
+                <li>Giảm thiểu rủi ro bằng cách kiểm chứng các giả định kinh doanh sớm.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Ví dụ thực tế -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Ví dụ thực tế</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Những gã khổng lồ bắt đầu nhỏ</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b>Dropbox:</b> Bắt đầu bằng một video demo để chứng minh nhu cầu, trước khi xây dựng sản phẩm phức tạp.</li>
+                <li><b>Zappos:</b> Chụp ảnh giày ở cửa hàng và đăng lên web. Chỉ mua giày để giao khi có khách đặt hàng, thay vì xây dựng kho bãi.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

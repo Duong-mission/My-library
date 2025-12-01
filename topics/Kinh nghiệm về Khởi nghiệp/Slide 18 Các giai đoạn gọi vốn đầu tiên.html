@@ -1,0 +1,63 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 18. Các giai đoạn gọi vốn đầu tiên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Các Nguồn Vốn Khởi Nghiệp Phổ Biến</h1>
+        <p class="text-xl text-slate-500 mt-2">Hành trình huy động vốn từ những bước đầu tiên đến các vòng gọi vốn chuyên nghiệp.</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Bootstrapping -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Bootstrapping</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tự lực cánh sinh</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside flex-grow">
+                <li>Sử dụng vốn tự có hoặc doanh thu ban đầu để tái đầu tư.</li>
+                <li>Không phụ thuộc vào các nhà đầu tư bên ngoài.</li>
+                <li>Nhà sáng lập giữ toàn quyền kiểm soát công ty.</li>
+                <li>Đòi hỏi sự kiên trì và quản lý tài chính cực kỳ chặt chẽ.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: FFF -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Friends, Family & Fools</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Vòng tròn quan hệ thân thiết</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside flex-grow">
+                <li>Huy động vốn từ bạn bè, gia đình và những người tin tưởng vào bạn.</li>
+                <li>Thường là nguồn vốn bên ngoài đầu tiên sau giai đoạn bootstrapping.</li>
+                <li>Dựa trên sự tin tưởng cá nhân hơn là kế hoạch kinh doanh chi tiết.</li>
+                <li>Cần có thỏa thuận rõ ràng để tránh ảnh hưởng đến mối quan hệ.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Angel Investors & VCs -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Nhà đầu tư Chuyên nghiệp</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Angel Investors & Venture Capital</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside flex-grow">
+                <li><b>Nhà đầu tư thiên thần (Angel):</b> Cá nhân giàu có đầu tư tiền của chính họ ở giai đoạn đầu.</li>
+                <li><b>Quỹ đầu tư mạo hiểm (VC):</b> Công ty chuyên nghiệp đầu tư vào các startup có tiềm năng tăng trưởng cao.</li>
+                <li>Đổi lại vốn, họ sẽ nhận cổ phần và tham gia định hướng công ty.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

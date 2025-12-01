@@ -1,0 +1,61 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 16. Làm việc với danh sách và Keys</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Render Danh Sách & Thuộc Tính `key` trong React</h1>
+        <p class="text-xl text-slate-500 mt-2">Hiểu cách hiển thị dữ liệu dạng danh sách hiệu quả và tối ưu trong React</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Render Danh Sách với map() -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Sử dụng `map()` để Render Danh Sách</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tạo giao diện động từ dữ liệu mảng</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Dùng phương thức `map()` của JavaScript trên mảng dữ liệu.</li>
+                <li>Mỗi phần tử mảng được biến đổi thành một phần tử JSX.</li>
+                <li>Cho phép hiển thị tập hợp các UI components dựa trên dữ liệu.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Tầm Quan Trọng của Thuộc Tính key -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Thuộc Tính `key` - Định Danh Duy Nhất</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Vai trò thiết yếu khi xử lý danh sách</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>`key` là một prop đặc biệt cần thiết khi render các danh sách.</li>
+                <li>Mỗi phần tử trong danh sách phải có một `key` duy nhất và ổn định.</li>
+                <li>React sử dụng `key` để theo dõi các phần tử và xác định sự thay đổi.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Tác Động của key đến Hiệu Suất -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Tối Ưu Hóa Hiệu Suất</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Cơ chế tái hòa giải (Reconciliation) của React</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>`key` giúp React nhận diện các phần tử đã được thêm, xóa, hoặc sắp xếp lại.</li>
+                <li>Không có `key` hoặc `key` không ổn định có thể gây lỗi và giảm hiệu suất.</li>
+                <li>Đảm bảo trạng thái component được giữ nguyên, đặc biệt với danh sách động.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

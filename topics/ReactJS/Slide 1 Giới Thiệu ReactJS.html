@@ -1,0 +1,64 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 1. Giới Thiệu ReactJS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Giới Thiệu về ReactJS</h1>
+        <p class="text-xl text-slate-500 mt-2">Tổng quan về thư viện JavaScript hàng đầu</p>
+        <p class="text-lg text-slate-600 mt-1">Người trình bày: [Tên của bạn]</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: ReactJS là gì? -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">ReactJS là gì?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Thư viện JavaScript cho UI</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Thư viện front-end JavaScript mã nguồn mở.</li>
+                <li>Dùng để xây dựng giao diện người dùng (UI) dựa trên các component.</li>
+                <li>Được Meta (trước đây là Facebook) và cộng đồng duy trì.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Đặc điểm nổi bật -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Đặc điểm nổi bật</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Các khái niệm cốt lõi</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>**Declarative:** Dễ dàng thiết kế giao diện cho từng trạng thái.</li>
+                <li>**Component-Based:** Xây dựng UI từ các component độc lập, tái sử dụng.</li>
+                <li>**Virtual DOM:** Tối ưu hiệu suất bằng cách cập nhật DOM hiệu quả.</li>
+                <li>**JSX:** Cú pháp mở rộng JavaScript giống HTML.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Lợi ích và Ứng dụng -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Lợi ích & Ứng dụng</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tại sao ReactJS phổ biến?</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Tốc độ phát triển nhanh, khả năng mở rộng cao.</li>
+                <li>Hệ sinh thái lớn, cộng đồng hỗ trợ mạnh mẽ.</li>
+                <li>Phát triển ứng dụng đơn trang (SPA), di động và SSR.</li>
+                <li>Một trong những công nghệ web được sử dụng phổ biến nhất.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

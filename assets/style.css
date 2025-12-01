@@ -1,0 +1,84 @@
+/* assets/style.css (Phiên bản PPT-Style) */
+
+/* --- Animation --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Cài đặt Tổng thể --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #34495e;
+    background-color: #f0f2f5; /* Màu nền xám nhạt giống PPT */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* --- Tiêu đề chính của trang --- */
+h1 {
+    color: #ffffff;
+    background-color: #4a69bd; /* Màu xanh dương đậm như ảnh mẫu */
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #4a69bd;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* === PHÉP THUẬT NẰM Ở ĐÂY: BIẾN BLOCKQUOTE THÀNH CARD === */
+blockquote {
+    background-color: #ffffff;
+    border-left: 5px solid #f1c40f; /* Viền vàng làm điểm nhấn */
+    margin: 30px 0;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    font-size: 1.05em;
+    animation: fadeIn 1.2s ease-out forwards;
+    opacity: 0; /* Bắt đầu ẩn đi để animation hoạt động */
+}
+
+blockquote p {
+    margin-top: 0;
+}
+
+blockquote strong {
+    color: #4a69bd; /* Đồng bộ màu với tiêu đề */
+    font-size: 1.2em;
+}
+
+/* --- Các định dạng khác --- */
+pre {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+code {
+    font-family: "Fira Code", "Courier New", monospace;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation: fadeIn 1.2s ease-out;
+}
+th, td { border: 1px solid #dee2e6; padding: 12px 15px; }
+th { background-color: #f1f3f5; }

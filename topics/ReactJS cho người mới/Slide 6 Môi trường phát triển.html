@@ -1,0 +1,62 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 6. Môi trường phát triển</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Thiết Lập Môi Trường Phát Triển ReactJS</h1>
+        <p class="text-xl text-slate-500 mt-2">Các công cụ và bước cần thiết để bắt đầu dự án React đầu tiên của bạn.</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Giới thiệu Node.js và npm/yarn -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Node.js và Quản Lý Gói</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Nền tảng cho phát triển Front-end hiện đại</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-slate-800">Node.js:</b> Môi trường chạy JavaScript ngoài trình duyệt, cần thiết cho các công cụ xây dựng React.</li>
+                <li><b class="text-slate-800">npm (Node Package Manager):</b> Trình quản lý gói mặc định của Node.js, dùng để cài đặt và quản lý các thư viện.</li>
+                <li><b class="text-slate-800">Yarn:</b> Một lựa chọn thay thế npm, thường được biết đến với tốc độ và độ tin cậy.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Trình bày cách cài đặt Node.js -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Cài Đặt Node.js</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Các bước để thiết lập hệ thống</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-slate-800">Tải xuống:</b> Truy cập trang web chính thức của Node.js và tải phiên bản LTS (Long Term Support) phù hợp với hệ điều hành của bạn.</li>
+                <li><b class="text-slate-800">Thực hiện cài đặt:</b> Chạy file cài đặt và làm theo hướng dẫn trên màn hình. npm sẽ được cài đặt kèm theo.</li>
+                <li><b class="text-slate-800">Kiểm tra cài đặt:</b> Mở Terminal/CMD và gõ <code>node -v</code> và <code>npm -v</code> để xác minh phiên bản.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Giới thiệu Create React App và hướng dẫn chạy ứng dụng -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Khởi Tạo & Chạy Ứng Dụng React</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Bắt đầu dự án React đầu tiên của bạn</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-slate-800">Create React App:</b> Công cụ chính thức giúp khởi tạo dự án React mà không cần cấu hình phức tạp.</li>
+                <li><b class="text-slate-800">Tạo dự án mới:</b> Trong Terminal/CMD, chạy lệnh <code>npx create-react-app ten-du-an-cua-ban</code>.</li>
+                <li><b class="text-slate-800">Vào thư mục dự án:</b> Sau khi tạo xong, điều hướng vào thư mục bằng <code>cd ten-du-an-cua-ban</code>.</li>
+                <li><b class="text-slate-800">Chạy ứng dụng:</b> Gõ <code>npm start</code> (hoặc <code>yarn start</code>) để khởi động máy chủ phát triển và xem ứng dụng trên trình duyệt.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

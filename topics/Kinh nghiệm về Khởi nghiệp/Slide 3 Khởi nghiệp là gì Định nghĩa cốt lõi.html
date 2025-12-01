@@ -1,0 +1,61 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 3. Khởi nghiệp là gì? Định nghĩa cốt lõi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Bản chất của Startup</h1>
+        <p class="text-xl text-slate-500 mt-2">Định nghĩa, so sánh và các yếu tố cốt lõi phân biệt.</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Định nghĩa -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Định nghĩa Startup</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tổ chức tạm thời đi tìm mô hình kinh doanh</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Theo Steve Blank, startup là một tổ chức được hình thành để tìm kiếm một mô hình kinh doanh có thể lặp lại và mở rộng.</li>
+                <li>Nó không phải là phiên bản thu nhỏ của một công ty lớn, mà là một hành trình khám phá và thử nghiệm.</li>
+                <li>Trọng tâm là học hỏi và xác thực các giả định về khách hàng, sản phẩm và thị trường.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: So sánh Startup và SME -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Startup vs. Doanh nghiệp SME</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Khác biệt về mục tiêu và tham vọng</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b>SME (Doanh nghiệp vừa & nhỏ):</b> Tập trung vào lợi nhuận ổn định, phục vụ thị trường địa phương hoặc thị trường ngách đã xác định.</li>
+                <li><b>Startup:</b> Hướng tới việc phá vỡ thị trường hiện tại, tăng trưởng theo cấp số nhân và có tham vọng vươn ra toàn cầu.</li>
+                <li>SME tối ưu hóa một mô hình đã biết, trong khi Startup tìm kiếm một mô hình hoàn toàn mới.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Các yếu tố chính -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Ba Yếu tố Cốt lõi</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">DNA của một Startup thực thụ</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b>Tăng trưởng nhanh (Growth):</b> Ưu tiên hàng đầu, sẵn sàng hy sinh lợi nhuận ngắn hạn để mở rộng thị phần nhanh chóng.</li>
+                <li><b>Đổi mới sáng tạo (Innovation):</b> Tạo ra sản phẩm, dịch vụ hoặc mô hình kinh doanh mới mẻ, giải quyết vấn đề theo cách độc đáo.</li>
+                <li><b>Khả năng mở rộng (Scalability):</b> Mô hình có thể phục vụ lượng lớn khách hàng mà không làm tăng chi phí vận hành một cách tương ứng.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 21. Quản Lý State Với Context API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">React Context API: Quản lý State Hiệu quả</h1>
+        <p class="text-xl text-slate-600 mt-2">Giải pháp tích hợp cho việc chia sẻ dữ liệu xuyên suốt các component.</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Context API là gì? -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Context API là gì?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Giải pháp quản lý State tích hợp</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Là cơ chế chính thức của React để truyền dữ liệu "xuống" cây component mà không cần truyền props thủ công qua mọi cấp.</li>
+                <li>Giải quyết vấn đề "prop drilling" (truyền props qua nhiều cấp trung gian).</li>
+                <li>Được thiết kế để chia sẻ dữ liệu "global" cho một cây component.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Khi nào sử dụng Context API? -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Khi nào sử dụng Context API?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Các trường hợp lý tưởng</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-[#3F51B5]">Dữ liệu Global:</b> Thông tin cần truy cập bởi nhiều component ở các cấp khác nhau.</li>
+                <li><b class="text-[#3F51B5]">Chủ đề (Theme):</b> Quản lý chế độ sáng/tối hoặc bảng màu ứng dụng.</li>
+                <li><b class="text-[#3F51B5]">Xác thực người dùng (User Authentication):</b> Trạng thái đăng nhập, thông tin người dùng.</li>
+                <li><b class="text-[#3F51B5]">Ngôn ngữ (Localization):</b> Quản lý ngôn ngữ hiển thị của ứng dụng.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Cách tạo Context -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Cách tạo Context</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Provider & Consumer (hoặc useContext)</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li><b class="text-[#3F51B5]">1. Tạo Context:</b> <code>const MyContext = React.createContext(defaultValue);</code></li>
+                <li><b class="text-[#3F51B5]">2. Cung cấp giá trị (Provider):</b> <code>&lt;MyContext.Provider value={...}></code></li>
+                <li><b class="text-[#3F51B5]">3. Sử dụng giá trị (Consumer):</b>
+                    <ul class="list-disc list-inside ml-5 mt-2">
+                        <li><b class="text-[#3F51B5]">Class Components:</b> <code>&lt;MyContext.Consumer>{value => ...}&lt;/MyContext.Consumer></code></li>
+                        <li><b class="text-[#3F51B5]">Function Components (recommended):</b> <code>const value = useContext(MyContext);</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

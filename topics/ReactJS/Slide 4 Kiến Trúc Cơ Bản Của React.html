@@ -1,0 +1,64 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 4. Kiến Trúc Cơ Bản Của React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">React Core Concepts: Components & Virtual DOM</h1>
+        <p class="text-xl text-slate-600 mt-2">Nền tảng xây dựng giao diện người dùng hiệu quả và tối ưu hiệu suất.</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Component-based Model -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Mô Hình Component-based</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Xây dựng UI bằng các khối độc lập</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Giao diện được chia thành các <b class="text-[#3F51B5]">Component</b> nhỏ, độc lập.</li>
+                <li>Mỗi component quản lý trạng thái riêng và có thể tái sử dụng.</li>
+                <li>Tăng tính <b class="text-[#3F51B5]">modularity</b>, dễ bảo trì và mở rộng ứng dụng.</li>
+                <li>Ví dụ: nút, thanh điều hướng, form nhập liệu.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Virtual DOM (VDOM) -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Virtual DOM là gì?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Bản sao nhẹ của DOM thực</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Một <b class="text-[#3F51B5]">biểu diễn ảo</b> của Document Object Model (DOM) trong bộ nhớ.</li>
+                <li>React tạo VDOM từ các component của bạn.</li>
+                <li>Không trực tiếp thao tác với DOM thực, giúp tăng tốc độ.</li>
+                <li>Là cơ chế trung gian để React tối ưu cập nhật UI.</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: VDOM vs. Real DOM -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Cách Virtual DOM Hoạt Động</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tối ưu hiệu suất qua cơ chế Reconciliation</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Khi trạng thái thay đổi, React tạo <b class="text-[#3F51B5]">VDOM mới</b>.</li>
+                <li>So sánh VDOM mới với VDOM cũ để tìm ra các thay đổi (<b class="text-[#3F51B5]">"diffing"</b>).</li>
+                <li>Chỉ cập nhật những phần tử <b class="text-[#3F51B5]">thay đổi thực sự</b> lên Real DOM.</li>
+                <li>Tránh việc re-render toàn bộ trang, mang lại hiệu suất cao.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

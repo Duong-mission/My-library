@@ -1,0 +1,59 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 15. Hook useEffect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">useEffect trong React: Quản lý Side Effects</h1>
+        <p class="text-xl text-slate-500 mt-2">Hiểu cách thức và lý do sử dụng Hook `useEffect` để tương tác với thế giới bên ngoài component.</p>
+    </header>
+
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">1. Khái niệm `useEffect`</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Thực hiện Side Effects trong Functional Components</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>`useEffect` là một React Hook cho phép bạn thực hiện các "side effects" trong functional components.</li>
+                <li>Side effects là các hoạt động tương tác với thế giới bên ngoài component (ví dụ: trình duyệt, mạng, API).</li>
+                <li>Nó chạy sau mỗi lần render của component, nhưng có thể được kiểm soát.</li>
+            </ul>
+        </div>
+
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">2. Các trường hợp sử dụng phổ biến</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tương tác với môi trường bên ngoài</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>**Gọi API:** Fetch dữ liệu từ server khi component mount hoặc khi có sự thay đổi.</li>
+                <li>**Thao tác DOM:** Cập nhật tiêu đề trang (`document.title`), thêm/bớt class.</li>
+                <li>**Event Listeners:** Thiết lập và dọn dẹp các sự kiện trình duyệt (ví dụ: `resize`, `scroll`).</li>
+                <li>**Timers:** Sử dụng `setTimeout` hoặc `setInterval`.</li>
+            </ul>
+        </div>
+
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">3. Quản lý Dependency Array</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Tối ưu hóa hiệu suất với Dependency Array</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>Dependency array (`[]`) là đối số thứ hai của `useEffect`.</li>
+                <li>**Không có array:** Effect chạy sau mỗi lần render.</li>
+                <li>**Array rỗng `[]`:** Effect chỉ chạy một lần sau lần render đầu tiên.</li>
+                <li>**Array có giá trị `[prop1, state2]`:** Effect chạy lại khi bất kỳ giá trị nào trong array thay đổi.</li>
+                <li>Quan trọng để tránh vòng lặp vô hạn và tối ưu hóa hiệu suất.</li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

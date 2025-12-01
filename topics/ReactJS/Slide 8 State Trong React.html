@@ -1,0 +1,81 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 8. State Trong React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col bg-white p-10">
+    <!-- 1. Tiêu đề chính của Slide -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-800">Hiểu về State trong ReactJS</h1>
+        <p class="text-xl text-slate-500 mt-2">Dữ liệu nội bộ, sự khác biệt với Props và cách quản lý</p>
+    </header>
+
+    <!-- 2. Lưới chứa 3 card nội dung -->
+    <main class="flex-grow grid grid-cols-3 gap-8">
+        <!-- Card 1: Định nghĩa State -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">State là gì?</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Dữ liệu nội bộ thay đổi theo thời gian</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>`State` là một đối tượng JavaScript giữ dữ liệu riêng tư của một component.</li>
+                <li>Dữ liệu này có thể thay đổi trong suốt vòng đời của component.</li>
+                <li>Khi `State` thay đổi, React sẽ tự động re-render component đó và các component con liên quan.</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: State vs. Props -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">State và Props</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Sự khác biệt cốt lõi</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>**Props:**
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Truyền từ component cha xuống con.</li>
+                        <li>Không thể thay đổi bởi component con (immutable).</li>
+                        <li>Dùng để cấu hình và truyền dữ liệu.</li>
+                    </ul>
+                </li>
+                <li>**State:**
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Quản lý bên trong component.</li>
+                        <li>Có thể thay đổi bởi chính component đó (mutable).</li>
+                        <li>Dùng để quản lý dữ liệu động.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Khởi tạo & Cập nhật State -->
+        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
+            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Quản lý State</h2>
+            <h3 class="text-xl font-semibold text-slate-700 mb-4">Khởi tạo và cập nhật</h3>
+            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside">
+                <li>**Khởi tạo (Function Components):** Sử dụng `useState` Hook.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>`const [value, setValue] = useState(initialValue);`</li>
+                    </ul>
+                </li>
+                <li>**Cập nhật (Function Components):** Sử dụng hàm setter từ `useState`.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>`setValue(newValue);`</li>
+                        <li>Luôn cập nhật `State` một cách bất biến (immutable).</li>
+                        <li>Cập nhật `State` là asynchronous.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+</html>

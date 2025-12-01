@@ -1,0 +1,53 @@
+<!-- assets/slide_shell.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 1. Tiêu đề chính</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <style>
+        /* Style cơ bản để slide hiển thị đúng kích thước */
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
+        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="slide relative bg-slate-900 w-full h-full font-sans overflow-hidden">
+    <!-- 1. Background Image -->
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop" alt="Hình ảnh nền truyền cảm hứng về sự đổi mới và sáng tạo" class="absolute inset-0 w-full h-full object-cover z-0">
+    
+    <!-- 2. Dark Overlay -->
+    <div class="absolute inset-0 bg-black/70 z-10"></div>
+
+    <!-- 3. Content Container -->
+    <div class="relative z-20 flex flex-col items-center justify-center h-full text-white p-10 space-y-8">
+
+        <!-- Logo Placeholder -->
+        <div class="w-28 h-28 bg-white/10 rounded-full flex items-center justify-center border-2 border-white/50">
+            <span class="font-bold text-2xl text-white">LOGO</span>
+        </div>
+
+        <!-- Main Title of the Presentation -->
+        <header class="text-center">
+            <h1 class="text-4xl font-bold text-center text-white leading-tight">
+                Kinh Nghiệm Về Khởi Nghiệp
+            </h1>
+            <p class="text-xl text-slate-300 mt-3">Từ Ý Tưởng Đến Thành Công Bền Vững</p>
+        </header>
+
+        <!-- Speaker Information Card -->
+        <div class="bg-[#E8EAF6]/10 backdrop-blur-sm rounded-lg p-6 shadow-lg w-full max-w-md text-center border border-white/20">
+            <h2 class="text-2xl font-bold text-white">Diễn giả: Nguyễn Văn A</h2>
+            <h3 class="text-xl font-semibold text-slate-200 mt-1">Chuyên gia Tư vấn Khởi nghiệp</h3>
+            <div class="border-t border-white/20 my-4"></div>
+            <ul class="space-y-2 text-base text-slate-200">
+                <li><span class="font-semibold">Email:</span> nguyenvana@email.com</li>
+                <li><span class="font-semibold">LinkedIn:</span> linkedin.com/in/nguyenvana</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

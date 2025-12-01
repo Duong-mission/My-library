@@ -1,0 +1,6 @@
+# Bỏ qua các file cấu hình của VS Code
+.vscode/
+
+# Bỏ qua các file hệ thống của macOS và Windows
+.DS_Store
+Thumbs.db
