@@ -80,8 +80,16 @@
                     The Library.
                 </a>
             </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-ink focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
             <!-- Menu Links -->
-            <ul class="flex space-x-8 text-sm font-medium tracking-wide text-gray-600">
+            <ul id="main-menu" class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-gray-600 flex-col md:flex-row md:space-x-8">
                 <li>
                     <a class="hover:text-black hover-underline-animation py-2" href="index.html">Trang chủ</a>
                 </li>
@@ -241,6 +249,18 @@
             </ul>
         </div>
     </nav>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('main-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            }
+        });
+    </script>
     <!-- Nội dung chính -->
     <main class="min-h-[80vh] flex flex-col items-center justify-center text-center px-4">
         <div class="max-w-3xl space-y-8">

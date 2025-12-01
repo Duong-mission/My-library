@@ -96,16 +96,16 @@
 <body class="text-paper h-screen w-screen flex flex-col justify-between">
 
     <!-- Header: Nút quay lại -->
-    <header class="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-start pointer-events-none">
+    <header class="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex flex-col md:flex-row justify-between items-center md:items-start pointer-events-none">
         <a href="index.html"
-            class="pointer-events-auto flex items-center gap-2 text-gray-400 hover:text-white transition-colors group">
+            class="pointer-events-auto flex items-center gap-2 text-gray-400 hover:text-white transition-colors group mb-2 md:mb-0">
             <span
                 class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
             <span class="font-serif italic text-sm tracking-wide">Quay về Thư viện</span>
         </a>
 
         <!-- Hiển thị Topic đang xem (Góc phải) -->
-        <div class="text-right">
+        <div class="text-center md:text-right">
             <!-- Đã đổi text-white thành text-gray-500 để hiện rõ trên nền sáng -->
             <p id="topic-title" class="font-serif text-sm uppercase tracking-widest text-gray-500 font-bold"></p>
         </div>
@@ -121,9 +121,14 @@
     </main>
 
     <!-- Footer: Điều khiển -->
-    <footer class="fixed bottom-0 w-full p-8 z-50 flex justify-center items-end">
-        <div
-            class="bg-ink/80 border border-white/10 backdrop-blur-md rounded-full px-6 py-3 flex items-center gap-8 shadow-2xl">
+    <footer id="main-footer" class="fixed bottom-0 w-full p-2 md:p-8 z-50 flex flex-col items-center justify-center transition-all duration-300">
+        <!-- Nút ẩn/hiện điều hướng (chỉ hiện trên di động) -->
+        <button id="toggle-footer-btn" class="md:hidden bg-ink/70 text-white rounded-t-lg px-4 py-2 text-xs mb-2 backdrop-blur-md">
+            Ẩn Điều Hướng
+        </button>
+
+        <div id="control-panel"
+            class="bg-ink/80 border border-white/10 backdrop-blur-md rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center gap-4 md:gap-8 shadow-2xl">
             <!-- Nút Trước -->
             <button id="prev-btn"
                 class="control-btn w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white">
@@ -179,8 +184,8 @@
             const scaleY = windowHeight / targetHeight;
 
             // Lấy tỷ lệ nhỏ hơn để đảm bảo slide nằm trọn trong màn hình (contain)
-            // Trừ đi một chút padding (0.85) để slide không dính sát mép
-            const scale = Math.min(scaleX, scaleY) * 0.9;
+            // Loại bỏ padding để slide chiếm tối đa không gian
+            const scale = Math.min(scaleX, scaleY);
 
             wrapper.style.transform = `translate(-50%, -50%) scale(${scale})`;
             wrapper.style.opacity = '1'; // Hiện slide sau khi đã tính toán xong
@@ -295,6 +300,24 @@
             } else if (e.key === 'ArrowLeft') {
                 if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
             }
+        });
+
+        // Toggle footer visibility
+        const toggleFooterBtn = document.getElementById('toggle-footer-btn');
+        const controlPanel = document.getElementById('control-panel');
+        let isFooterVisible = true;
+
+        toggleFooterBtn.addEventListener('click', () => {
+            if (isFooterVisible) {
+                controlPanel.classList.add('translate-y-full', 'opacity-0');
+                toggleFooterBtn.textContent = 'Hiện Điều Hướng';
+                toggleFooterBtn.classList.add('translate-y-[-40px]'); // Adjust button position
+            } else {
+                controlPanel.classList.remove('translate-y-full', 'opacity-0');
+                toggleFooterBtn.textContent = 'Ẩn Điều Hướng';
+                toggleFooterBtn.classList.remove('translate-y-[-40px]');
+            }
+            isFooterVisible = !isFooterVisible;
         });
 
         init();
