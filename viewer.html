@@ -90,6 +90,27 @@
         #progress-bar {
             transition: width 0.3s ease;
         }
+        /* Glitter Cursor Effect */
+        .glitter-particle {
+            position: absolute;
+            background-color: #ffb300; /* White glitter */
+            border-radius: 80%;
+            opacity: 0;
+            pointer-events: none; /* Ensure particles don't interfere with clicks */
+            animation: glitterFadeOut 2s forwards;
+            z-index: 99;
+        }
+
+        @keyframes glitterFadeOut {
+            0% {
+                transform: scale(0.5) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) translateY(-20px);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -388,6 +409,38 @@
             }
         });
 
+    </script>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const particle = document.createElement('div');
+            particle.className = 'glitter-particle';
+            particle.style.left = `${e.clientX}px`;
+            particle.style.top = `${e.clientY}px`;
+            const size = Math.random() * 5 + 2; // Random size between 2 and 7px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000); // Remove particle after 1 second (matches animation duration)
+        });
+    </script>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const particle = document.createElement('div');
+            particle.className = 'glitter-particle';
+            particle.style.left = `${e.clientX}px`;
+            particle.style.top = `${e.clientY}px`;
+            const size = Math.random() * 5 + 2; // Random size between 2 and 7px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000); // Remove particle after 1 second (matches animation duration)
+        });
     </script>
 </body>
 

@@ -63,6 +63,27 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Glitter Cursor Effect */
+        .glitter-particle {
+            position: absolute;
+            background-color: #cf1919; /* White glitter */
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none; /* Ensure particles don't interfere with clicks */
+            animation: glitterFadeOut 1s forwards;
+            z-index: 9999;
+        }
+
+        @keyframes glitterFadeOut {
+            0% {
+                transform: scale(0.5) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) translateY(-20px);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased selection:bg-gray-200 selection:text-black">
@@ -258,5 +279,21 @@
 <footer class="py-8 text-center text-gray-400 text-xs font-serif">
 <p>© Kiến Thức Cá Nhân. Lưu giữ cho mai sau.</p>
 </footer>
+<script>
+        document.addEventListener('mousemove', function(e) {
+            const particle = document.createElement('div');
+            particle.className = 'glitter-particle';
+            particle.style.left = `${e.clientX}px`;
+            particle.style.top = `${e.clientY}px`;
+            const size = Math.random() * 5 + 2; // Random size between 2 and 7px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000); // Remove particle after 1 second (matches animation duration)
+        });
+    </script>
 </body>
 </html>
