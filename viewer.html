@@ -115,7 +115,7 @@
     <main class="flex-grow relative w-full h-full overflow-hidden flex items-center justify-center">
         <!-- Slide Index Display (Bên trái slide) -->
         <div id="left-slide-index" class="fixed left-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
-            <span class="font-serif text-6xl italic font-bold text-white/20">--</span>
+            <span class="font-serif text-6xl italic font-bold text-white/50">--</span>
         </div>
         <!-- Wrapper sẽ được scale bởi JS -->
         <div id="slide-wrapper" class="flex items-center justify-center text-ink overflow-hidden rounded-sm">
@@ -369,6 +369,23 @@
             // Reset giá trị
             touchStartX = 0;
             touchEndX = 0;
+        });
+
+        // --- XỬ LÝ SỰ KIỆN CUỘN CHUỘT (MOUSE WHEEL) ---
+        mainContent.addEventListener('wheel', (e) => {
+            e.preventDefault(); // Ngăn cuộn trang mặc định
+
+            // Chỉ xử lý nếu slide không phải là đầu hoặc cuối
+            if (currentSlideIndex === 0 && e.deltaY < 0) return; // Cuộn lên khi ở slide đầu tiên
+            if (currentSlideIndex === slideFiles.length - 1 && e.deltaY > 0) return; // Cuộn xuống khi ở slide cuối cùng
+
+            if (e.deltaY > 0) {
+                // Cuộn xuống (tiến slide)
+                loadSlide(currentSlideIndex + 1);
+            } else {
+                // Cuộn lên (lùi slide)
+                loadSlide(currentSlideIndex - 1);
+            }
         });
 
     </script>
