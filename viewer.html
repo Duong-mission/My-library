@@ -350,11 +350,11 @@
             }
 
             if (touchEndX < touchStartX) {
-                // Vuốt sang trái (tiến slide)
-                if (currentSlideIndex < slideFiles.length - 1) loadSlide(currentSlideIndex + 1);
-            } else if (touchEndX > touchStartX) {
-                // Vuốt sang phải (lùi slide)
+                // Vuốt sang trái (lùi slide)
                 if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
+            } else if (touchEndX > touchStartX) {
+                // Vuốt sang phải (tiến slide)
+                if (currentSlideIndex < slideFiles.length - 1) loadSlide(currentSlideIndex + 1);
             }
 
             // Reset giá trị
