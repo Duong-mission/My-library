@@ -19,6 +19,7 @@
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -34,19 +35,49 @@
         }
     </script>
     <style>
+        /* Dark mode styles */
+        .dark .dark\:bg-gray-800 {
+            background-color: #1f2937;
+        }
+
+        .dark .dark\:text-white {
+            color: #fff;
+        }
+
+        .dark .dark\:border-gray-700 {
+            border-color: #374151;
+        }
+
+        .dark .dark\:hover\:text-gray-300 {
+            color: #d1d5db;
+        }
+        .dark .dark\:bg-gray-900 {
+            background-color: #111827;
+         }
+
+        .dark .dark\:text-gray-300 {
+            color: #d1d5db;
+        }
+
+        .dark .dark\:text-gray-400 {
+            color: #9ca3af;
+        }
+
+        .dark .dark\:bg-gray-700 {
+            background-color: #374151;
+        }
+    </style>
+    <style>
         /* Ẩn thanh cuộn nhưng vẫn cho phép cuộn nếu cần thiết */
         body {
             overflow: hidden;
             /* Ngăn cuộn trang chính */
-            background-color: #1a1a1a;
-            /* Màu mực sẫm */
         }
 
         /* Slide Container: Đây là khung chứa slide, sẽ được scale bằng JS */
         #slide-wrapper {
             width: 1280px;
             height: 720px;
-            background-color: #fdfbf7;
             position: absolute;
             left: 50%;
             top: 50%;
@@ -114,12 +145,17 @@
     </style>
 </head>
 
-<body class="text-paper h-screen w-screen flex flex-col justify-between">
+<body class="bg-paper text-ink dark:bg-ink dark:text-paper h-screen w-screen flex flex-col justify-between">
+
+    <button id="theme-toggle" class="fixed bottom-20 right-4 z-[100] bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg">
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM4 10a1 1 0 01-1-1H2a1 1 0 110-2h1a1 1 0 011 1zM15 12a1 1 0 100 2h1a1 1 0 100-2h-1zM7.05 14.95a1 1 0 010-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414 0z"></path></svg>
+    </button>
 
     <!-- Header: Nút quay lại -->
     <header class="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex flex-col md:flex-row justify-between items-center md:items-start pointer-events-none">
         <a href="index.html"
-            class="pointer-events-auto flex items-center gap-2 text-gray-400 hover:text-white transition-colors group mb-2 md:mb-0">
+            class="pointer-events-auto flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group mb-2 md:mb-0">
             <span
                 class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
             <span class="font-serif italic text-sm tracking-wide">Quay về Thư viện</span>
@@ -139,7 +175,7 @@
             <span class="font-serif text-6xl italic font-bold text-white/50">--</span>
         </div>
         <!-- Wrapper sẽ được scale bởi JS -->
-        <div id="slide-wrapper" class="flex items-center justify-center text-ink overflow-hidden rounded-sm">
+        <div id="slide-wrapper" class="bg-paper dark:bg-gray-800 text-ink dark:text-paper flex items-center justify-center overflow-hidden rounded-sm">
             <!-- Nội dung slide được inject vào đây -->
             <div id="slide-content" class="w-full h-full p-16"></div>
         </div>
@@ -153,30 +189,30 @@
         </button>
 
         <div id="control-panel"
-            class="bg-ink/80 border border-white/10 backdrop-blur-md rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center gap-4 md:gap-8 shadow-2xl">
+            class="bg-white/80 dark:bg-ink/80 border border-gray-200 dark:border-white/10 backdrop-blur-md rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center gap-4 md:gap-8 shadow-2xl text-ink dark:text-paper">
             <!-- Nút Trước -->
             <button id="prev-btn"
-                class="control-btn w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white">
+                class="control-btn w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-sm">arrow_back_ios_new</span>
             </button>
 
             <!-- Bộ đếm trang -->
             <div class="flex flex-col items-center min-w-[80px]">
                 <span id="slide-counter" class="font-serif text-xl italic font-bold">--</span>
-                <span class="text-[10px] text-gray-400 uppercase tracking-wider">Trang</span>
+                <span class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-wider">Trang</span>
             </div>
 
             <!-- Nút Sau -->
             <button id="next-btn"
-                class="control-btn w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white">
+                class="control-btn w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
             </button>
         </div>
     </footer>
 
     <!-- Progress Bar (Thanh tiến trình chạy ngang trên cùng) -->
-    <div class="fixed top-0 left-0 h-1 bg-white/10 w-full z-40">
-        <div id="progress-bar" class="h-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] w-0"></div>
+    <div class="fixed top-0 left-0 h-1 bg-gray-200 dark:bg-white/10 w-full z-40">
+        <div id="progress-bar" class="h-full bg-ink dark:bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] w-0"></div>
     </div>
 
     <script>
@@ -440,6 +476,41 @@
             setTimeout(() => {
                 particle.remove();
             }, 1000); // Remove particle after 1 second (matches animation duration)
+        });
+    </script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            darkIcon.classList.remove('hidden');
+        } else {
+            lightIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
         });
     </script>
 </body>
