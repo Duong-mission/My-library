@@ -113,6 +113,10 @@
 
     <!-- Khu vực hiển thị Slide -->
     <main class="flex-grow relative w-full h-full overflow-hidden flex items-center justify-center">
+        <!-- Slide Index Display (Bên trái slide) -->
+        <div id="left-slide-index" class="fixed left-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+            <span class="font-serif text-6xl italic font-bold text-white/20">--</span>
+        </div>
         <!-- Wrapper sẽ được scale bởi JS -->
         <div id="slide-wrapper" class="flex items-center justify-center text-ink overflow-hidden rounded-sm">
             <!-- Nội dung slide được inject vào đây -->
@@ -168,6 +172,7 @@
         const counter = document.getElementById('slide-counter');
         const progressBar = document.getElementById('progress-bar');
         const topicTitle = document.getElementById('topic-title');
+        const leftSlideIndex = document.querySelector('#left-slide-index span'); // Thêm DOM element mới
 
         // --- HÀM SCALE SLIDE (QUAN TRỌNG) ---
         // Giúp slide 1280x720 luôn vừa khít màn hình trình duyệt
@@ -257,6 +262,10 @@
             // Disable nút
             prevBtn.disabled = currentSlideIndex === 0;
             nextBtn.disabled = currentSlideIndex === slideFiles.length - 1;
+
+            // Cập nhật số trang cho ô bên trái
+            leftSlideIndex.textContent = displayIndex;
+            document.getElementById('left-slide-index').style.opacity = '1';
         }
 
         // --- KHỞI TẠO ---
