@@ -2,17 +2,20 @@
 <!DOCTYPE html>
 
 <html class="scroll-smooth" lang="vi">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thư Viện Kiến Thức</title>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- Fonts: Sử dụng Playfair Display (Serif - Cổ điển) cho tiêu đề và Inter (Sans - Hiện đại) cho nội dung -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thư Viện Kiến Thức</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts: Sử dụng Playfair Display (Serif - Cổ điển) cho tiêu đề và Inter (Sans - Hiện đại) cho nội dung -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -38,7 +41,7 @@
             darkMode: 'class',
         }
     </script>
-<style>
+    <style>
         /* Dark mode styles */
         .dark .dark\:bg-gray-800 {
             background-color: #1f2937;
@@ -72,7 +75,7 @@
             background-color: #374151;
         }
     </style>
-<style>
+    <style>
         /* Hiệu ứng gạch chân mượt mà */
         .hover-underline-animation {
             display: inline-block;
@@ -160,176 +163,208 @@
         }
     </style>
 </head>
-<body class="bg-paper text-ink font-sans antialiased selection:bg-gray-200 selection:text-black dark:bg-gray-900 dark:text-gray-300">
-<button class="fixed bottom-4 right-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg" id="theme-toggle">
-<svg class="w-6 h-6 hidden" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-</svg>
-<svg class="w-6 h-6 hidden" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-<path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM4 10a1 1 0 01-1-1H2a1 1 0 110-2h1a1 1 0 011 1zM15 12a1 1 0 100 2h1a1 1 0 100-2h-1zM7.05 14.95a1 1 0 010-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414 0z">
-</path>
-</svg>
-</button>
-<!-- Thanh Điều Hướng (Navbar) - Thiết kế tối giản, không nền màu chói -->
-<nav class="w-full py-8 border-b border-gray-200/50 dark:border-gray-700">
-<div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-<!-- Logo / Tên Thư Viện -->
-<div class="mb-4 md:mb-0">
-<a class="font-serif text-2xl font-bold tracking-tight hover:opacity-70 transition-opacity" href="index.html">
+
+<body
+    class="bg-paper text-ink font-sans antialiased selection:bg-gray-200 selection:text-black dark:bg-gray-900 dark:text-gray-300">
+    <button
+        class="fixed bottom-4 right-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg"
+        id="theme-toggle">
+        <svg class="w-6 h-6 hidden" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg class="w-6 h-6 hidden" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM4 10a1 1 0 01-1-1H2a1 1 0 110-2h1a1 1 0 011 1zM15 12a1 1 0 100 2h1a1 1 0 100-2h-1zM7.05 14.95a1 1 0 010-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414 0z">
+            </path>
+        </svg>
+    </button>
+    <!-- Thanh Điều Hướng (Navbar) - Thiết kế tối giản, không nền màu chói -->
+    <nav class="w-full py-8 border-b border-gray-200/50 dark:border-gray-700">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo / Tên Thư Viện -->
+            <div class="mb-4 md:mb-0">
+                <a class="font-serif text-2xl font-bold tracking-tight hover:opacity-70 transition-opacity"
+                    href="index.html">
                     The Library.
                 </a>
-</div>
-<!-- Mobile menu button -->
-<div class="md:hidden flex items-center">
-<button class="text-ink focus:outline-none" id="menu-toggle">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-</div>
-<!-- Menu Links -->
-<ul class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-gray-600 flex-col md:flex-row md:space-x-8" id="main-menu">
-<li>
-<a class="hover:text-black hover-underline-animation py-2" href="index.html">Trang chủ</a>
-</li>
-<!-- MỤC MENU 1: Kỹ Năng Mềm -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+            </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button class="text-ink focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Menu Links -->
+            <ul class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-gray-600 flex-col md:flex-row md:space-x-8"
+                id="main-menu">
+                <li>
+                    <a class="hover:text-black hover-underline-animation py-2" href="index.html">Trang chủ</a>
+                </li>
+                <!-- MỤC MENU 1: Kỹ Năng Mềm -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Kỹ Năng Mềm
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<!-- Dropdown Minimalist -->
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=TG">
+                    </button>
+                    <!-- Dropdown Minimalist -->
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=TG">
                                 TG
                             </a>
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Kinh nghiệm về nghệ thuật đối nhân xử thế của các cao nhân 90">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Kinh nghiệm về nghệ thuật đối nhân xử thế của các cao nhân 90">
                                 Kinh nghiệm về nghệ thuật đối nhân xử thế của các cao nhân 90
                             </a>
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Kinh nghiệm đối nhân xử thế của các cụ 90 tuổi để lại cho đời sau">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Kinh nghiệm đối nhân xử thế của các cụ 90 tuổi để lại cho đời sau">
                                 Kinh nghiệm đối nhân xử thế của các cụ 90 tuổi để lại cho đời sau
                             </a>
-<!-- PLACEHOLDER_KY_NANG_MEM -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 2: Lập Trình -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                            <!-- PLACEHOLDER_KY_NANG_MEM -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 2: Lập Trình -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Lập Trình
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=ReactJS">
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=ReactJS">
                                 ReactJS
                             </a>
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=ReactJS cho người mới">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=ReactJS cho người mới">
                                 ReactJS cho người mới
                             </a>
-<!-- PLACEHOLDER_LAP_TRINH -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 3: Kinh Doanh -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                            <!-- PLACEHOLDER_LAP_TRINH -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 3: Kinh Doanh -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Kinh Doanh
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Kinh nghiệm về Khởi nghiệp">Kinh nghiệm về Khởi nghiệp</a>
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Dùng tiền đẻ ra tiền">Dùng tiền đẻ ra tiền</a>
-<!-- PLACEHOLDER_KINH_DOANH -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 4: Ngoại Ngữ -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Kinh nghiệm về Khởi nghiệp">Kinh nghiệm về Khởi nghiệp</a>
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Dùng tiền đẻ ra tiền">Dùng tiền đẻ ra tiền</a>
+                            <!-- PLACEHOLDER_KINH_DOANH -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 4: Ngoại Ngữ -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Ngoại Ngữ
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Học tiếng anh">Học tiếng anh</a>
-<!-- PLACEHOLDER_NGOAI_NGU -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 5: Tư Duy – Tâm Lý -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Học tiếng anh">Học tiếng anh</a>
+                            <!-- PLACEHOLDER_NGOAI_NGU -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 5: Tư Duy – Tâm Lý -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Tư Duy – Tâm Lý
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Kỷ luật bản thân">Kỷ luật bản thân</a>
-<!-- PLACEHOLDER_TU_DUY_TAM_LY -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 6: Kinh Thánh -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Kỷ luật bản thân">Kỷ luật bản thân</a>
+                            <!-- PLACEHOLDER_TU_DUY_TAM_LY -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 6: Kinh Thánh -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Kinh Thánh
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Hành trình tìm hiểu đạo phật sau sắc">Hành trình tìm hiểu đạo
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Hành trình tìm hiểu đạo phật sau sắc">Hành trình tìm hiểu đạo
                                 phật sau sắc</a>
-<!-- PLACEHOLDER_KINH_THANH -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 7: Thiết Kế – Sáng Tạo -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                            <!-- PLACEHOLDER_KINH_THANH -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 7: Thiết Kế – Sáng Tạo -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Thiết Kế – Sáng Tạo
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=phát triển ý tưởng sáng tạo">phát triển ý tưởng sáng tạo</a>
-<!-- PLACEHOLDER_THIET_KE_SANG_TAO -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 8: Khoa Học & Đời Sống -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=phát triển ý tưởng sáng tạo">phát triển ý tưởng sáng tạo</a>
+                            <!-- PLACEHOLDER_THIET_KE_SANG_TAO -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 8: Khoa Học & Đời Sống -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Khoa Học &amp; Đời Sống
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm" href="viewer.html?topic=Sức khỏe">Sức khỏe</a>
-<!-- PLACEHOLDER_KHOA_HOC_DOI_SONG -->
-</div>
-</div>
-</li>
-<!-- MỤC MENU 9: Xã Hội – Triết Học -->
-<li class="relative group py-2">
-<button class="cursor-pointer hover:text-black flex items-center gap-1">
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="viewer.html?topic=Sức khỏe">Sức khỏe</a>
+                            <!-- PLACEHOLDER_KHOA_HOC_DOI_SONG -->
+                        </div>
+                    </div>
+                </li>
+                <!-- MỤC MENU 9: Xã Hội – Triết Học -->
+                <li class="relative group py-2">
+                    <button class="cursor-pointer hover:text-black flex items-center gap-1">
                         Xã Hội – Triết Học
                         <span class="text-[10px] opacity-50">▼</span>
-</button>
-<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
-<div class="py-2">
-<a href="viewer.html?topic=Triết học Phi Châu">Triết học Phi Châu</a>
-<a href="viewer.html?topic=Đạo hồi">Đạo hồi</a>
-<!-- PLACEHOLDER_XA_HOI_TRIET_HOC -->
-</div>
-</div>
-</li>
-</ul>
-</div>
-</nav>
-<script>
+                    </button>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white border border-gray-100 shadow-xl rounded-sm opacity-0 invisible group-hover:visible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="py-2">
+                            <a href="viewer.html?topic=Triết học Phi Châu">Triết học Phi Châu</a>
+                            <a href="viewer.html?topic=Đạo hồi">Đạo hồi</a>
+                            <!-- PLACEHOLDER_XA_HOI_TRIET_HOC -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script>
         document.getElementById('menu-toggle').addEventListener('click', function () {
             var menu = document.getElementById('main-menu');
             if (menu.classList.contains('hidden')) {
@@ -341,30 +376,33 @@
             }
         });
     </script>
-<!-- Nội dung chính -->
-<main class="min-h-[80vh] flex flex-col items-center justify-center text-center px-4">
-<div class="max-w-3xl space-y-8">
-<span class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase fade-in" style="animation-delay: 0.2s;">Khám phá kho tàng tri thức</span>
-<h1 class="font-serif text-5xl md:text-7xl text-ink leading-tight fade-in-up" style="animation-delay: 0.4s;">
-                Chào mừng đến với <br/>
-<span class="italic text-gray-500">Thư viện Kiến thức.</span>
-</h1>
-<p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto fade-in-up" style="animation-delay: 0.6s;">
+    <!-- Nội dung chính -->
+    <main class="min-h-[80vh] flex flex-col items-center justify-center text-center px-4">
+        <div class="max-w-3xl space-y-8">
+            <span class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase fade-in"
+                style="animation-delay: 0.2s;">Khám phá kho tàng tri thức</span>
+            <h1 class="font-serif text-5xl md:text-7xl text-ink leading-tight fade-in-up"
+                style="animation-delay: 0.4s;">
+                Chào mừng đến với <br />
+                <span class="italic text-gray-500">Thư viện Kiến thức.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto fade-in-up"
+                style="animation-delay: 0.6s;">
                 Nơi đây không chỉ lưu giữ những bài thuyết trình và tài liệu chuyên sâu do trí tuệ nhân tạo tổng hợp, mà
                 còn là một không gian tĩnh lặng để bạn có thể học hỏi, suy ngẫm và mở rộng tầm nhìn.
             </p>
-<div class="pt-8 fade-in-up" style="animation-delay: 0.8s;">
-<div class="h-px w-24 bg-gray-300 mx-auto"></div>
-<p class="mt-4 text-xs text-gray-400 font-serif italic">Hãy chọn một chủ đề từ menu phía trên để bắt đầu
+            <div class="pt-8 fade-in-up" style="animation-delay: 0.8s;">
+                <div class="h-px w-24 bg-gray-300 mx-auto"></div>
+                <p class="mt-4 text-xs text-gray-400 font-serif italic">Hãy chọn một chủ đề từ menu phía trên để bắt đầu
                     cuộc hành trình khám phá của bạn.</p>
-</div>
-</div>
-</main>
-<!-- Footer tối giản -->
-<footer class="py-8 text-center text-gray-400 text-xs font-serif dark:text-gray-500">
-<p>© Kiến Thức Cá Nhân. Lưu giữ cho mai sau.</p>
-</footer>
-<script>
+            </div>
+        </div>
+    </main>
+    <!-- Footer tối giản -->
+    <footer class="py-8 text-center text-gray-400 text-xs font-serif dark:text-gray-500">
+        <p>© Kiến Thức Cá Nhân. Lưu giữ cho mai sau.</p>
+    </footer>
+    <script>
         document.addEventListener('mousemove', function (e) {
             const particle = document.createElement('div');
             particle.className = 'glitter-particle';
@@ -380,7 +418,7 @@
             }, 1000); // Remove particle after 1 second (matches animation duration)
         });
     </script>
-<script>
+    <script>
         const themeToggle = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
@@ -417,4 +455,5 @@
         });
     </script>
 </body>
+
 </html>
