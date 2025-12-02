@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Góc Đọc • Thư Viện Kiến Thức</title>
+
+    <!-- === THÊM DÒNG NÀY VÀO ĐÂY === -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <!-- ============================ -->
+
+
+
+
+
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,9 +60,10 @@
         .dark .dark\:hover\:text-gray-300 {
             color: #d1d5db;
         }
+
         .dark .dark\:bg-gray-900 {
             background-color: #111827;
-         }
+        }
 
         .dark .dark\:text-gray-300 {
             color: #d1d5db;
@@ -68,6 +78,109 @@
         }
     </style>
     <style>
+        /* Thumbnail Gallery Styles */
+        #thumbnail-gallery {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            overflow-y: auto;
+            z-index: 60;
+            transition: transform 0.3s ease;
+            transform: translateY(-50%) translateX(100%);
+            /* Start hidden */
+        }
+
+        #thumbnail-gallery.visible {
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .dark #thumbnail-gallery {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .thumbnail-item {
+            cursor: pointer;
+            margin-bottom: 8px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background-color: #e0e0e0;
+        }
+
+        .dark .thumbnail-item {
+            background-color: #374151;
+        }
+
+        .thumbnail-item:hover {
+            border-color: #f59e0b;
+            /* Amber 500 */
+        }
+
+        .thumbnail-item.active {
+            border-color: #3b82f6;
+            /* Blue 500 */
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .thumbnail-item .thumbnail-preview {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            transform-origin: top left;
+        }
+
+        .thumbnail-item .thumbnail-content {
+            width: 1280px;
+            /* Original slide width */
+            height: 720px;
+            /* Original slide height */
+            transform-origin: top left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            /* Fallback for dark mode previews */
+        }
+
+        .dark .thumbnail-item .thumbnail-content {
+            background-color: #1f2937;
+            /* Match slide dark background */
+        }
+
+        /* Toggle button for thumbnails */
+        #toggle-thumbnails-btn {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg) translateX(50%);
+            transform-origin: bottom right;
+            z-index: 61;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        #toggle-thumbnails-btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
         /* Ẩn thanh cuộn nhưng vẫn cho phép cuộn nếu cần thiết */
         body {
             overflow: hidden;
@@ -121,13 +234,16 @@
         #progress-bar {
             transition: width 0.3s ease;
         }
+
         /* Glitter Cursor Effect */
         .glitter-particle {
             position: absolute;
-            background-color: #ffb300; /* White glitter */
+            background-color: #ffb300;
+            /* White glitter */
             border-radius: 80%;
             opacity: 0;
-            pointer-events: none; /* Ensure particles don't interfere with clicks */
+            pointer-events: none;
+            /* Ensure particles don't interfere with clicks */
             animation: glitterFadeOut 2s forwards;
             z-index: 99;
         }
@@ -137,6 +253,7 @@
                 transform: scale(0.5) translateY(0);
                 opacity: 1;
             }
+
             100% {
                 transform: scale(1.5) translateY(-20px);
                 opacity: 0;
@@ -147,13 +264,23 @@
 
 <body class="bg-paper text-ink dark:bg-ink dark:text-paper h-screen w-screen flex flex-col justify-between">
 
-    <button id="theme-toggle" class="fixed bottom-20 right-4 z-[100] bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg">
-        <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-        <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM4 10a1 1 0 01-1-1H2a1 1 0 110-2h1a1 1 0 011 1zM15 12a1 1 0 100 2h1a1 1 0 100-2h-1zM7.05 14.95a1 1 0 010-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414 0z"></path></svg>
+    <button id="theme-toggle"
+        class="fixed bottom-20 right-4 z-[100] bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg">
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 3.636l-.707.707a1 1 0 101.414 1.414l.707-.707zM4 10a1 1 0 01-1-1H2a1 1 0 110-2h1a1 1 0 011 1zM15 12a1 1 0 100 2h1a1 1 0 100-2h-1zM7.05 14.95a1 1 0 010-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414 0z">
+            </path>
+        </svg>
     </button>
 
     <!-- Header: Nút quay lại -->
-    <header class="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex flex-col md:flex-row justify-between items-center md:items-start pointer-events-none">
+    <header
+        class="fixed top-0 left-0 w-full p-4 md:p-6 z-50 flex flex-col md:flex-row justify-between items-center md:items-start pointer-events-none">
         <a href="index.html"
             class="pointer-events-auto flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group mb-2 md:mb-0">
             <span
@@ -171,20 +298,27 @@
     <!-- Khu vực hiển thị Slide -->
     <main class="flex-grow relative w-full h-full overflow-hidden flex items-center justify-center">
         <!-- Slide Index Display (Bên trái slide) -->
-        <div id="left-slide-index" class="fixed left-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+        <div id="left-slide-index"
+            class="fixed left-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
             <span class="font-serif text-6xl italic font-bold text-white/50">--</span>
         </div>
         <!-- Wrapper sẽ được scale bởi JS -->
-        <div id="slide-wrapper" class="bg-paper dark:bg-gray-800 text-ink dark:text-paper flex items-center justify-center overflow-hidden rounded-sm">
+        <div id="slide-wrapper"
+            class="bg-paper dark:bg-gray-800 text-ink dark:text-paper flex items-center justify-center overflow-hidden rounded-sm">
             <!-- Nội dung slide được inject vào đây -->
             <div id="slide-content" class="w-full h-full p-16"></div>
         </div>
+        <!-- Thumbnail Gallery -->
+        <div id="thumbnail-gallery"></div>
+        <button id="toggle-thumbnails-btn">SLIDES</button>
     </main>
 
     <!-- Footer: Điều khiển -->
-    <footer id="main-footer" class="fixed bottom-0 w-full p-2 md:p-8 z-50 flex flex-col items-center justify-center transition-all duration-300">
+    <footer id="main-footer"
+        class="fixed bottom-0 w-full p-2 md:p-8 z-50 flex flex-col items-center justify-center transition-all duration-300">
         <!-- Nút ẩn/hiện điều hướng (chỉ hiện trên di động) -->
-        <button id="toggle-footer-btn" class="md:hidden bg-ink/70 text-white rounded-t-lg px-4 py-2 text-xs mb-2 backdrop-blur-md">
+        <button id="toggle-footer-btn"
+            class="md:hidden bg-ink/70 text-white rounded-t-lg px-4 py-2 text-xs mb-2 backdrop-blur-md">
             Ẩn Điều Hướng
         </button>
 
@@ -229,7 +363,10 @@
         const counter = document.getElementById('slide-counter');
         const progressBar = document.getElementById('progress-bar');
         const topicTitle = document.getElementById('topic-title');
-        const leftSlideIndex = document.querySelector('#left-slide-index span'); // Thêm DOM element mới
+        const leftSlideIndex = document.querySelector('#left-slide-index span');
+        const thumbnailGallery = document.getElementById('thumbnail-gallery');
+        const toggleThumbnailsBtn = document.getElementById('toggle-thumbnails-btn');
+
 
         // --- HÀM SCALE SLIDE (QUAN TRỌNG) ---
         // Giúp slide 1280x720 luôn vừa khít màn hình trình duyệt
@@ -323,8 +460,64 @@
             // Cập nhật số trang cho ô bên trái
             leftSlideIndex.textContent = displayIndex;
             document.getElementById('left-slide-index').style.opacity = '1';
-        }
 
+            // Cập nhật thumbnail đang active
+            document.querySelectorAll('.thumbnail-item').forEach((thumb, idx) => {
+                thumb.classList.toggle('active', idx === currentSlideIndex);
+                // Scroll into view if active
+                if (idx === currentSlideIndex) {
+                    thumb.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        }
+        // --- TẠO THUMBNAILS ---
+        async function populateThumbnails() {
+            thumbnailGallery.innerHTML = ''; // Xóa thumbnails cũ
+
+            // Use a for...of loop to handle async operations sequentially
+            for (const [index, file] of slideFiles.entries()) {
+                const thumb = document.createElement('div');
+                thumb.className = 'thumbnail-item';
+                thumb.dataset.index = index;
+
+                const previewContainer = document.createElement('div');
+                previewContainer.className = 'thumbnail-preview';
+
+                const contentContainer = document.createElement('div');
+                contentContainer.className = 'thumbnail-content';
+
+                previewContainer.appendChild(contentContainer);
+                thumb.appendChild(previewContainer);
+
+                thumb.addEventListener('click', () => {
+                    loadSlide(index);
+                });
+
+                thumbnailGallery.appendChild(thumb);
+
+                // Asynchronously load the content for the thumbnail
+                try {
+                    const response = await fetch(`topics/${topicFolder}/${file}`);
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const slideContent = doc.querySelector('.slide') || doc.body;
+                    contentContainer.innerHTML = slideContent.innerHTML;
+
+                    // Calculate scale and apply it
+                    const scale = thumb.clientWidth / 1280; // 1280 is original width
+                    contentContainer.style.transform = `scale(${scale})`;
+                    previewContainer.style.height = `${720 * scale}px`;
+
+                } catch (e) {
+                    contentContainer.innerHTML = `<span class="text-xs text-red-500">Error</span>`;
+                    console.error("Failed to load thumbnail content for slide " + index, e);
+                }
+            }
+        }
         // --- KHỞI TẠO ---
         async function init() {
             // Lắng nghe sự kiện resize
@@ -347,6 +540,7 @@
                 slideFiles = data.slides;
 
                 if (slideFiles.length > 0) {
+                    populateThumbnails();
                     loadSlide(0);
                 }
             } catch (error) {
@@ -359,6 +553,13 @@
         // --- SỰ KIỆN ---
         prevBtn.addEventListener('click', () => loadSlide(currentSlideIndex - 1));
         nextBtn.addEventListener('click', () => loadSlide(currentSlideIndex + 1));
+
+        toggleThumbnailsBtn.addEventListener('click', () => {
+            thumbnailGallery.classList.toggle('visible');
+        });
+
+        // Prevent wheel event propagation from thumbnail gallery
+        thumbnailGallery.addEventListener('wheel', (e) => e.stopPropagation());
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === 'Space') {
@@ -434,7 +635,8 @@
 
             // Chỉ xử lý nếu slide không phải là đầu hoặc cuối
             if (currentSlideIndex === 0 && e.deltaY < 0) return; // Cuộn lên khi ở slide đầu tiên
-            if (currentSlideIndex === slideFiles.length - 1 && e.deltaY > 0) return; // Cuộn xuống khi ở slide cuối cùng
+            if (currentSlideIndex === slideFiles.length - 1 && e.deltaY > 0)
+                return; // Cuộn xuống khi ở slide cuối cùng
 
             if (e.deltaY > 0) {
                 // Cuộn xuống (tiến slide)
@@ -444,26 +646,9 @@
                 loadSlide(currentSlideIndex - 1);
             }
         });
-
     </script>
     <script>
-        document.addEventListener('mousemove', function(e) {
-            const particle = document.createElement('div');
-            particle.className = 'glitter-particle';
-            particle.style.left = `${e.clientX}px`;
-            particle.style.top = `${e.clientY}px`;
-            const size = Math.random() * 5 + 2; // Random size between 2 and 7px
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            document.body.appendChild(particle);
-
-            setTimeout(() => {
-                particle.remove();
-            }, 1000); // Remove particle after 1 second (matches animation duration)
-        });
-    </script>
-    <script>
-        document.addEventListener('mousemove', function(e) {
+        document.addEventListener('mousemove', function (e) {
             const particle = document.createElement('div');
             particle.className = 'glitter-particle';
             particle.style.left = `${e.clientX}px`;
@@ -483,7 +668,8 @@
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
 
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             darkIcon.classList.remove('hidden');
         } else {
