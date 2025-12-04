@@ -1,3 +1,4 @@
+<!-- website/pdf_viewer.html -->
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -233,7 +234,7 @@
 <body class="bg-paper text-ink dark:bg-ink dark:text-paper h-screen w-screen flex flex-col justify-between">
 
     <button id="theme-toggle"
-        class="fixed bottom-20 right-4 z-[100] bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg">
+        class="fixed bottom-4 right-4 z-[100] bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full p-2 shadow-lg">
         <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -281,32 +282,7 @@
         <button id="toggle-thumbnails-btn">PAGES</button>
     </main>
 
-    <!-- Footer -->
-    <footer id="main-footer"
-        class="fixed bottom-0 w-full p-2 md:p-8 z-50 flex flex-col items-center justify-center transition-all duration-300">
-        <button id="toggle-footer-btn"
-            class="md:hidden bg-ink/70 text-white rounded-t-lg px-4 py-2 text-xs mb-2 backdrop-blur-md">
-            Ẩn Điều Hướng
-        </button>
-
-        <div id="control-panel"
-            class="bg-white/80 dark:bg-ink/80 border border-gray-200 dark:border-white/10 backdrop-blur-md rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center gap-4 md:gap-8 shadow-2xl text-ink dark:text-paper">
-            <button id="prev-btn"
-                class="control-btn w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center">
-                <span class="material-symbols-outlined text-sm">arrow_back_ios_new</span>
-            </button>
-
-            <div class="flex flex-col items-center min-w-[80px]">
-                <span id="slide-counter" class="font-serif text-xl italic font-bold">--</span>
-                <span class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-wider">Trang</span>
-            </div>
-
-            <button id="next-btn"
-                class="control-btn w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center">
-                <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
-            </button>
-        </div>
-    </footer>
+    <!-- ĐÃ XÓA FOOTER CONTROL PANEL -->
 
     <!-- Progress Bar -->
     <div class="fixed top-0 left-0 h-1 bg-gray-200 dark:bg-white/10 w-full z-40">
@@ -326,9 +302,6 @@
 
         // --- DOM ELEMENTS ---
         const wrapper = document.getElementById('slide-wrapper');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const counter = document.getElementById('slide-counter');
         const progressBar = document.getElementById('progress-bar');
         const fileTitle = document.getElementById('file-title');
         const leftSlideIndex = document.querySelector('#left-slide-index span');
@@ -344,23 +317,9 @@
             const windowHeight = window.innerHeight;
 
             // Lấy kích thước canvas hiện tại (đã render)
-            // Nếu chưa render, dùng kích thước mặc định hoặc chờ
             if (!canvas.width) return;
 
-            // Kích thước hiển thị mong muốn của canvas (CSS pixels)
-            // Ta muốn canvas hiển thị vừa khít trong màn hình
-            // Tỷ lệ canvas
             const canvasRatio = canvas.width / canvas.height;
-
-            // Tính toán kích thước wrapper để chứa vừa canvas
-            // Wrapper sẽ được scale để fit màn hình
-
-            // Logic:
-            // 1. Set wrapper size bằng kích thước hiển thị của PDF (ví dụ width = 1000px)
-            // 2. Scale wrapper để fit window
-
-            // Tuy nhiên, để đơn giản và giống viewer cũ:
-            // Ta set wrapper size cố định theo tỷ lệ PDF, sau đó scale wrapper
 
             // Giả sử ta muốn chiều rộng wrapper là 1280px (chuẩn)
             const targetWidth = 1280;
@@ -372,7 +331,7 @@
             // Tính scale factor cho wrapper
             const scaleX = windowWidth / targetWidth;
             const scaleY = windowHeight / targetHeight;
-            const wrapperScale = Math.min(scaleX, scaleY); // * 0.95 để có chút padding nếu muốn
+            const wrapperScale = Math.min(scaleX, scaleY);
 
             wrapper.style.transform = `translate(-50%, -50%) scale(${wrapperScale})`;
             wrapper.style.opacity = '1';
@@ -438,13 +397,9 @@
             if (!pdfDoc) return;
 
             const displayIndex = pageNum.toString().padStart(2, '0');
-            counter.textContent = displayIndex;
-
+            
             const progress = (pageNum / pdfDoc.numPages) * 100;
             progressBar.style.width = `${progress}%`;
-
-            prevBtn.disabled = pageNum <= 1;
-            nextBtn.disabled = pageNum >= pdfDoc.numPages;
 
             leftSlideIndex.textContent = displayIndex;
             document.getElementById('left-slide-index').style.opacity = '1';
@@ -480,7 +435,6 @@
                 thumbnailGallery.appendChild(thumb);
 
                 // Render thumbnail async
-                // Use a smaller scale for thumbnails
                 pdfDoc.getPage(i).then(page => {
                     const viewport = page.getViewport({ scale: 0.3 });
                     thumbCanvas.height = viewport.height;
@@ -525,9 +479,6 @@
         }
 
         // --- EVENTS ---
-        prevBtn.addEventListener('click', onPrevPage);
-        nextBtn.addEventListener('click', onNextPage);
-
         toggleThumbnailsBtn.addEventListener('click', () => {
             thumbnailGallery.classList.toggle('visible');
         });
@@ -540,24 +491,6 @@
             } else if (e.key === 'ArrowLeft') {
                 onPrevPage();
             }
-        });
-
-        // Toggle footer
-        const toggleFooterBtn = document.getElementById('toggle-footer-btn');
-        const controlPanel = document.getElementById('control-panel');
-        let isFooterVisible = true;
-
-        toggleFooterBtn.addEventListener('click', () => {
-            if (isFooterVisible) {
-                controlPanel.classList.add('translate-y-full', 'opacity-0');
-                toggleFooterBtn.textContent = 'Hiện Điều Hướng';
-                toggleFooterBtn.classList.add('translate-y-[-40px]');
-            } else {
-                controlPanel.classList.remove('translate-y-full', 'opacity-0');
-                toggleFooterBtn.textContent = 'Ẩn Điều Hướng';
-                toggleFooterBtn.classList.remove('translate-y-[-40px]');
-            }
-            isFooterVisible = !isFooterVisible;
         });
 
         // Swipe support

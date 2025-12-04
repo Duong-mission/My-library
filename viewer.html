@@ -304,37 +304,6 @@
         <button id="toggle-thumbnails-btn">SLIDES</button>
     </main>
 
-    <!-- Footer: Điều khiển -->
-    <footer id="main-footer"
-        class="fixed bottom-0 w-full p-2 md:p-8 z-50 flex flex-col items-center justify-center transition-all duration-300">
-        <!-- Nút ẩn/hiện điều hướng (chỉ hiện trên di động) -->
-        <button id="toggle-footer-btn"
-            class="md:hidden bg-ink/70 text-white rounded-t-lg px-4 py-2 text-xs mb-2 backdrop-blur-md">
-            Ẩn Điều Hướng
-        </button>
-
-        <div id="control-panel"
-            class="bg-white/80 dark:bg-ink/80 border border-gray-200 dark:border-white/10 backdrop-blur-md rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center gap-4 md:gap-8 shadow-2xl text-ink dark:text-paper">
-            <!-- Nút Trước -->
-            <button id="prev-btn"
-                class="control-btn w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center">
-                <span class="material-symbols-outlined text-sm">arrow_back_ios_new</span>
-            </button>
-
-            <!-- Bộ đếm trang -->
-            <div class="flex flex-col items-center min-w-[80px]">
-                <span id="slide-counter" class="font-serif text-xl italic font-bold">--</span>
-                <span class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-wider">Trang</span>
-            </div>
-
-            <!-- Nút Sau -->
-            <button id="next-btn"
-                class="control-btn w-10 h-10 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center">
-                <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
-            </button>
-        </div>
-    </footer>
-
     <!-- Progress Bar (Thanh tiến trình chạy ngang trên cùng) -->
     <div class="fixed top-0 left-0 h-1 bg-gray-200 dark:bg-white/10 w-full z-40">
         <div id="progress-bar" class="h-full bg-ink dark:bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] w-0"></div>
@@ -349,9 +318,6 @@
         // --- DOM ELEMENTS ---
         const wrapper = document.getElementById('slide-wrapper');
         const container = document.getElementById('slide-content');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const counter = document.getElementById('slide-counter');
         const progressBar = document.getElementById('progress-bar');
         const topicTitle = document.getElementById('topic-title');
         const leftSlideIndex = document.querySelector('#left-slide-index span');
@@ -438,15 +404,10 @@
         function updateControls() {
             // Cập nhật số trang (dạng 01, 02...)
             const displayIndex = (currentSlideIndex + 1).toString().padStart(2, '0');
-            counter.textContent = displayIndex;
 
             // Cập nhật Progress Bar
             const progress = ((currentSlideIndex + 1) / slideFiles.length) * 100;
             progressBar.style.width = `${progress}%`;
-
-            // Disable nút
-            prevBtn.disabled = currentSlideIndex === 0;
-            nextBtn.disabled = currentSlideIndex === slideFiles.length - 1;
 
             // Cập nhật số trang cho ô bên trái
             leftSlideIndex.textContent = displayIndex;
@@ -542,9 +503,6 @@
         }
 
         // --- SỰ KIỆN ---
-        prevBtn.addEventListener('click', () => loadSlide(currentSlideIndex - 1));
-        nextBtn.addEventListener('click', () => loadSlide(currentSlideIndex + 1));
-
         toggleThumbnailsBtn.addEventListener('click', () => {
             thumbnailGallery.classList.toggle('visible');
         });
@@ -558,24 +516,6 @@
             } else if (e.key === 'ArrowLeft') {
                 if (currentSlideIndex > 0) loadSlide(currentSlideIndex - 1);
             }
-        });
-
-        // Toggle footer visibility
-        const toggleFooterBtn = document.getElementById('toggle-footer-btn');
-        const controlPanel = document.getElementById('control-panel');
-        let isFooterVisible = true;
-
-        toggleFooterBtn.addEventListener('click', () => {
-            if (isFooterVisible) {
-                controlPanel.classList.add('translate-y-full', 'opacity-0');
-                toggleFooterBtn.textContent = 'Hiện Điều Hướng';
-                toggleFooterBtn.classList.add('translate-y-[-40px]'); // Adjust button position
-            } else {
-                controlPanel.classList.remove('translate-y-full', 'opacity-0');
-                toggleFooterBtn.textContent = 'Ẩn Điều Hướng';
-                toggleFooterBtn.classList.remove('translate-y-[-40px]');
-            }
-            isFooterVisible = !isFooterVisible;
         });
 
         init();
