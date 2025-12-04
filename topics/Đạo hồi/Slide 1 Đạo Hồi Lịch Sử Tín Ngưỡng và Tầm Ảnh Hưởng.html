@@ -1,62 +1,62 @@
-<!-- assets/slide_shell.html -->
-<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide 1. Đạo Hồi: Lịch Sử, Tín Ngưỡng và Tầm Ảnh Hưởng</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Bạn có thể thêm các link JS/CSS khác ở đây nếu cần -->
+    <script src="https://agnes-cdn.kiwiar.com/website/js/npm/echarts.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <style>
-        /* Style cơ bản để slide hiển thị đúng kích thước */
-        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e5e7eb; }
-        .slide { width: 1280px; height: 720px; box-sizing: border-box; overflow: hidden; background-color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+      html, body { margin: 0; padding: 0; overflow: hidden; font-size: 1.4vw; }
+      .slide { width: 1280px; min-height: 720px; padding: 40px; box-sizing: border-box; overflow: hidden; position: relative; background-color: #fff; }
+      .custom-border { border: 2px solid #910DF9; }
+      @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Calibri&display=swap');
     </style>
 </head>
-<body>
-    <div class="slide flex flex-col bg-white p-10 font-sans">
-    <!-- 1. Tiêu đề chính -->
-    <header class="text-center mb-10">
-        <h1 class="text-4xl font-bold text-slate-800">Giới Thiệu Về Đạo Hồi</h1>
-        <p class="text-xl text-slate-500 mt-2">Khám phá một tôn giáo với tầm ảnh hưởng toàn cầu</p>
-    </header>
+<body style="font-family: 'Calibri', sans-serif;">
+    <div class="slide flex flex-col" style="background-color: #FFF8DC;">
+        <header class="text-center mb-6">
+            <h1 class="text-5xl font-bold" style="font-family: 'Georgia', serif; color: #383838;">
+                CỔ TÍCH LÀ CÓ THẬT?
+            </h1>
+        </header>
 
-    <!-- 2. Lưới chứa 3 card nội dung -->
-    <main class="flex-grow grid grid-cols-3 gap-8">
-        <!-- Card 1: Tổng Quan -->
-        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
-            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Tổng Quan</h2>
-            <h3 class="text-xl font-semibold text-slate-700 mb-4">Nền tảng và Quy mô</h3>
-            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside flex-grow">
-                <li><strong>Định nghĩa:</strong> Tôn giáo độc thần, "Islam" nghĩa là "phục tùng Thượng Đế".</li>
-                <li><strong>Quy mô:</strong> Hơn 1.9 tỷ tín đồ (Muslim), lớn thứ hai thế giới, phát triển nhanh nhất.</li>
-                <li><strong>Thượng Đế:</strong> Được gọi là Allah (tiếng Ả Rập cho Chúa Duy Nhất).</li>
-            </ul>
-        </div>
+        <main class="flex-grow flex gap-8">
+            <!-- Left Column -->
+            <div class="w-1/2 flex flex-col justify-around">
+                <section>
+                    <h2 class="text-2xl font-bold mb-3" style="font-family: 'Georgia', serif;">Huyền thoại Đại Hồng Thủy và Tàu Nô-ê</h2>
+                    <p class="text-lg mb-2">Đại Hồng Thủy là thảm họa khủng khiếp, được mô tả trong Kinh Thánh là sự trừng phạt của Thiên Chúa cho sự suy đồi đạo đức của loài người. Chỉ <strong class="font-bold">Nô-ê và gia đình</strong> ông được cứu.</p>
+                    <p class="text-lg mb-2">Theo chỉ dẫn của Chúa, Nô-ê đóng một <strong class="font-bold">con tàu khổng lồ</strong> (dài 150m, rộng 25m, cao 15m) để cứu gia đình và các loài vật.</p>
+                    <p class="text-lg">Mưa lớn kéo dài <strong class="font-bold">40 ngày đêm</strong>, nước dâng liên tục trong 150 ngày. Sau đó, con tàu dừng lại trên <strong class="font-bold">núi Ararat</strong> khi nước rút dần.</p>
+                </section>
+                <section class="mt-4">
+                    <h2 class="text-2xl font-bold mb-3" style="font-family: 'Georgia', serif;">Thông điệp từ Kinh Thánh</h2>
+                    <blockquote class="text-lg border-l-4 border-gray-500 pl-4 italic">
+                        Câu chuyện nhấn mạnh đức tin của Nô-ê vào lời Chúa và sự cứu rỗi, thể hiện lòng nhân từ của Thiên Chúa và tầm quan trọng của việc duy trì đạo đức.
+                    </blockquote>
+                </section>
+            </div>
 
-        <!-- Card 2: Các Khía Cạnh Chính -->
-        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
-            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Các Khía Cạnh Chính</h2>
-            <h3 class="text-xl font-semibold text-slate-700 mb-4">Nội dung sẽ được khám phá</h3>
-            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside flex-grow">
-                <li><strong>Lịch sử hình thành:</strong> Từ Tiên tri Muhammad tại Mecca (Thế kỷ 7).</li>
-                <li><strong>Giáo lý & Tín ngưỡng:</strong> Kinh Qur'an, Hadith, Năm Trụ Cột.</li>
-                <li><strong>Văn hóa & Xã hội:</strong> Quy tắc Halal/Haram, kiến trúc, phân bố dân số.</li>
-                <li><strong>Vai trò hiện đại:</strong> Ảnh hưởng đến chính trị, xã hội toàn cầu.</li>
-            </ul>
-        </div>
-
-        <!-- Card 3: Mục Đích -->
-        <div class="bg-[#E8EAF6] rounded-lg p-6 shadow-md flex flex-col">
-            <h2 class="text-2xl font-bold text-[#3F51B5] mb-2">Mục Đích Thuyết Trình</h2>
-            <h3 class="text-xl font-semibold text-slate-700 mb-4">Hướng tới cái nhìn khách quan</h3>
-            <ul class="space-y-3 text-base text-slate-600 list-disc list-inside flex-grow">
-                <li><strong>Cung cấp:</strong> Cái nhìn toàn diện và sâu sắc về Đạo Hồi.</li>
-                <li><strong>Phân tích:</strong> Các yếu tố cốt lõi và sự phát triển đa dạng.</li>
-                <li><strong>Phá bỏ định kiến:</strong> Hiểu rõ hơn về giá trị hòa bình, từ bi, công bằng.</li>
-            </ul>
-        </div>
-    </main>
-</div>
+            <!-- Right Column -->
+            <div class="w-1/2 flex flex-col gap-6">
+                <img src="https://app.agnes-ai.com/gcs-agnes-default/images/CUGHMdRX.jpg" alt="Noah's Ark on stormy waters" class="rounded-lg w-full h-[55%] object-cover shadow-lg">
+                <div class="border-l-8 p-4 flex flex-col justify-center flex-grow" style="border-color: #DAA520;">
+                    <h2 class="text-2xl font-bold mb-3" style="font-family: 'Georgia', serif;">Bằng chứng khảo cổ trên núi Ararat</h2>
+                    <p class="text-lg mb-2">Năm 1957, các nhà khảo cổ phát hiện <strong class="font-bold">vết tích hóa thạch hình dáng con tàu</strong> trên núi Ararat (Thổ Nhĩ Kỳ), cao 2000m. Đây được xem là bằng chứng khảo cổ quan trọng.</p>
+                    <p class="text-lg mb-4">Chính phủ Thổ Nhĩ Kỳ đã chính thức công nhận đây là <strong class="font-bold">Tàu Nô-ê</strong> và biến khu vực này thành <strong class="font-bold">công viên quốc gia</strong>, một báu vật quốc gia.</p>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full mr-3 flex-shrink-0" style="background-color: #DAA520;"></div>
+                        <div class="text-white text-base font-semibold px-3 py-1 rounded" style="background-color: #DAA520;">
+                            Neo đá khổng lồ được tìm thấy gần đó
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- No external sources required -->
 </body>
 </html>
