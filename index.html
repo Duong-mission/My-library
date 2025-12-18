@@ -235,6 +235,18 @@
                                 href="pdf_viewer.html?file=tâm linh.pdf">
                                 Tâm Linh
                             </a>
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="pdf_viewer.html?file=Chronos.pdf">
+                                Chronos
+                            </a>
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="pdf_viewer.html?file=Scrum_Cốt_Lõi.pdf">
+                                Scrum
+                            </a>
+                            <a class="block px-6 py-3 text-gray-600 hover:text-black hover:bg-gray-50 transition-colors text-sm"
+                                href="pdf_viewer.html?file=Core_Feature_Plan.pdf">
+                                Task
+                            </a>
                         </div>
                     </div>
                     <!-- MỤC MENU 1: Kỹ Năng Mềm -->
@@ -455,7 +467,7 @@
         const lightIcon = document.getElementById('theme-toggle-light-icon');
 
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
+                '(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             darkIcon.classList.remove('hidden');
         } else {
